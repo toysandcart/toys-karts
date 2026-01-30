@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toys and Karts</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h2>{{ category | capitalize }}</h2>
+
+<div class="container grid">
+
+{% for p in items %}
+<div class="card">
+    <img src="{{ url_for('static', filename='images/' + p[2]) }}">
+    <h3>{{ p[0] }}</h3>
+    <p>₹{{ p[1] }}</p>
+
+    <a href="https://wa.me/917092780374?text=I want {{ p[0] }} - ₹{{ p[1] }}">
+        <button>Order on WhatsApp</button>
+    </a>
+</div>
+{% endfor %}
+
+</div>
+
+</body>
+</html>

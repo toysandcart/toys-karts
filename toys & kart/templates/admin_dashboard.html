@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toys and Karts</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h2>📦 Admin Dashboard</h2>
+
+<form method="post" enctype="multipart/form-data">
+
+    <input type="text" name="name" placeholder="Product Name" required><br><br>
+
+    <input type="text" name="price" placeholder="Price" required><br><br>
+
+    <select name="category">
+        <option value="toys">Toys</option>
+        <option value="gifts">Gifts</option>
+        <option value="home">Home Needs</option>
+        <option value="electronics">Electronics</option>
+    </select><br><br>
+
+    <input type="file" name="image" required><br><br>
+
+    <button type="submit">Add Product</button>
+</form>
+
+<hr>
+
+<h3>📋 Products in Database</h3>
+
+{% for p in products %}
+<p>
+    {{ p[1] }} – ₹{{ p[2] }} ({{ p[3] }})
+</p>
+{% endfor %}
+
+
+<br>
+<a href="/admin/logout">Logout</a>
+
+</body>
+</html>
